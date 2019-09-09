@@ -7,8 +7,6 @@ class Post < ActiveRecord::Base
   validate :clickbait
   
   def clickbait
-    if !Post.title.include?("Won't Believe")
-      
-    end
+    
   end
 end
