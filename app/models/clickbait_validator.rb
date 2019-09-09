@@ -1,7 +1,7 @@
-class ClickbaitValidator < ActiveModel::Validator
-  def validate(record)
-    if !record.title.include? "Won't Believe"
-      record.errors.add(:title, "Must be clickbaity")
+class ClickbaitValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    unless value =~ /(Won't Believe|Secret|Top \d|Guess)/
+      record.errors[attribute] << ("Not a clickbait title")
     end
   end
 end
