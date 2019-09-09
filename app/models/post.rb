@@ -1,4 +1,4 @@
-require '.app/helpers/click_bait.rb'
+require '.helpers/click_bait.rb'
 class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :content, length: {minimum: 250}
